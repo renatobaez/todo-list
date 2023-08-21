@@ -1,0 +1,45 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: 0;
+	text-decoration-style: none;
+}
+
+main{
+	margin: 10% 0 0 20%;
+	background-color: #EBEBEC;
+	width: 650px;
+	border: 2px solid black;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+img{
+	width: 20px;
+}
+.task{
+	display: flex;
+	justify-content: space-between;
+}
+
+section {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+button {
+		width: 100px;
+		height: 30px;
+		border-radius: 5px;
+		background-color: #1A7742;
+		color: #FFFFFF;
+}
+input[type=text] {
+		width: 500px;
+		height: 30px;
+		border: #DDE0E3;
+		border-radius: 5px;
+}
+table {
+	text-align: left;
+	border-collapse: separate;
+  border-spacing: 10px 5px;
+}

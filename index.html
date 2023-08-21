@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List_</title>
+		<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+	<main>
+		<section>
+			<h1>Todo List</h1>
+			<hr>
+		</section>
+		<section>
+			<label for="newTask">Nueva tarea</label><br>
+			<input type="text" id="newTask">
+			<button id="btnAdd">Agregar</button> 
+		</section>
+		<section class="task">
+			<div>
+				<p>Total: <span id="total">0</span></p>
+				<p>Realizadas: <span id="done">0</span></p>
+			</div>
+			<div>
+				<table id="taskList"></table>
+			</div>
+		</section>
+	</main>
+	<script src="./assets/js/script.js"></script>
+</body>
+</html>
