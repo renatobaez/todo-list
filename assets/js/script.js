@@ -57,7 +57,12 @@ const changeDone =(id)=>{
 	done.innerHTML = contDone
 }
 btnAdd.addEventListener("click", () => {
-	addTask(newTask.value)
-	newTask.value = ""
-	renderTask()
+	if(newTask.value){
+		addTask(newTask.value)
+		newTask.value = ""
+		renderTask()
+	}else{
+		alert("Debe de ingresa una tarea")
+		newTask.focus()
+	}
 })
