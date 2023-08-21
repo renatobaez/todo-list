@@ -1,5 +1,4 @@
-let taskJson = [];
-
+const taskJson = [];
 const taskList = document.querySelector("#taskList")
 const newTask = document.querySelector("#newTask")
 const btnAdd = document.querySelector("#btnAdd")
@@ -34,8 +33,9 @@ const renderTask =()=>{
 	done.innerHTML = contDone
 }
 const addTask = (task) =>{
+	/* genera un numero random hasta que no exista en el array */
 	let idRand = Math.floor(Math.random()*100)
-	while(taskJson.includes(idRand) === true){
+	while(taskJson.includes(idRand) === true){ 
 		idRand = Math.floor(Math.random()*100)
 	}
 	taskJson.push({id: idRand, description: task, state: 0})
