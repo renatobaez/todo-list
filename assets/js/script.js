@@ -5,8 +5,6 @@ const btnAdd = document.querySelector("#btnAdd")
 const total = document.querySelector("#total")
 const done = document.querySelector("#done")
 
-let contDone = 0 // Variable para contar cuantas tareas estan realizadas
-
 const renderTask =()=>{
 	let contDone = 0 // Variable para contar cuantas tareas estan realizadas
 	let html = ""
