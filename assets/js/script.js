@@ -8,7 +8,7 @@ const done = document.querySelector("#done")
 let contDone = 0 // Variable para contar cuantas tareas estan realizadas
 
 const renderTask =()=>{
-	contDone = 0
+	let contDone = 0 // Variable para contar cuantas tareas estan realizadas
 	let html = ""
 	if(taskJson.length>0){
 		html = `<thead>
@@ -21,7 +21,7 @@ const renderTask =()=>{
 		for (task of taskJson) {
 			if(task.state){
 				contDone++
-				html += `<tr><td>${task.id}</td><td>${task.description}</td><td><input type="checkbox" class="checkbox" onclick="changeDone(${task.id})" id="taskCheck" checked></td><td><img onclick="deleteTask(${task.id})" src="./assets/img/delete.png" alt="Eliminar"></td></tr>`
+				html += `<tr><td>${task.id}</td><td class="highlight">${task.description}</td><td><input type="checkbox" class="checkbox" onclick="changeDone(${task.id})" id="taskCheck" checked></td><td><img onclick="deleteTask(${task.id})" src="./assets/img/delete.png" alt="Eliminar"></td></tr>`
 			}else{
 				html += `<tr><td>${task.id}</td><td>${task.description}</td><td><input type="checkbox" class="checkbox" onclick="changeDone(${task.id})" id="taskCheck"></td><td><img onclick="deleteTask(${task.id})" src="./assets/img/delete.png" alt="Eliminar"></td></tr>`
 			}
@@ -49,12 +49,10 @@ const changeDone =(id)=>{
 	const indiceTask = taskJson.findIndex( searchIndex => searchIndex.id === id)
 	if(taskJson[indiceTask].state === 0){
 		taskJson.splice(indiceTask, 1 ,{id: taskJson[indiceTask].id, description: taskJson[indiceTask].description, state: 1})
-		contDone++
 	}else{
 		taskJson.splice(indiceTask, 1 ,{id: taskJson[indiceTask].id, description: taskJson[indiceTask].description, state: 0})
-		contDone--
 	}
-	done.innerHTML = contDone
+	renderTask()
 }
 btnAdd.addEventListener("click", () => {
 	if(newTask.value){

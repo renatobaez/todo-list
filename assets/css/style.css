@@ -43,3 +43,6 @@ table {
 	border-collapse: separate;
   border-spacing: 10px 5px;
 }
+.highlight{
+	text-decoration:line-through;
+}
