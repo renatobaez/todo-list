@@ -35,22 +35,23 @@ const renderTask =()=>{
 const addTask = (task) =>{
 	/* genera un numero random hasta que no exista en el array */
 	let idRand = Math.floor(Math.random()*100)
-	while(taskJson.includes(idRand) === true){ 
+	const ids = taskJson.map(task => task.id)
+	while(ids.includes(idRand) === true){ 
 		idRand = Math.floor(Math.random()*100)
 	}
 	taskJson.push({id: idRand, description: task, state: 0})
 }
 const deleteTask =(id)=>{
-	const indiceTask = taskJson.findIndex( searchIndex => searchIndex.id === id)
-	taskJson.splice(indiceTask, 1)
+	const indexTask = taskJson.findIndex( searchIndex => searchIndex.id === id)
+	taskJson.splice(indexTask, 1)
 	renderTask()
 }
 const changeDone =(id)=>{
-	const indiceTask = taskJson.findIndex( searchIndex => searchIndex.id === id)
-	if(taskJson[indiceTask].state === 0){
-		taskJson.splice(indiceTask, 1 ,{id: taskJson[indiceTask].id, description: taskJson[indiceTask].description, state: 1})
+	const indexTask = taskJson.findIndex( searchIndex => searchIndex.id === id)
+	if(taskJson[indexTask].state === 0){
+		taskJson.splice(indexTask, 1 ,{id: taskJson[indexTask].id, description: taskJson[indexTask].description, state: 1})
 	}else{
-		taskJson.splice(indiceTask, 1 ,{id: taskJson[indiceTask].id, description: taskJson[indiceTask].description, state: 0})
+		taskJson.splice(indexTask, 1 ,{id: taskJson[indexTask].id, description: taskJson[indexTask].description, state: 0})
 	}
 	renderTask()
 }
