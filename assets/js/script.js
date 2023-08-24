@@ -29,6 +29,7 @@ const renderTask =()=>{
 	taskList.innerHTML = html
 	total.innerHTML = taskJson.length
 	done.innerHTML = contDone
+	newTask.focus()
 }
 const addTask = (task) =>{
 	/* genera un numero random hasta que no exista en el array */
@@ -44,6 +45,7 @@ const deleteTask =(id)=>{
 	taskJson.splice(indexTask, 1)
 	renderTask()
 }
+
 const changeDone =(id)=>{
 	const indexTask = taskJson.findIndex( searchIndex => searchIndex.id === id)
 	if(taskJson[indexTask].state === 0){
@@ -59,7 +61,7 @@ btnAdd.addEventListener("click", () => {
 		newTask.value = ""
 		renderTask()
 	}else{
-		alert("Debe de ingresa una tarea")
+		alert("Debe ingresar una tarea")
 		newTask.focus()
 	}
 })
